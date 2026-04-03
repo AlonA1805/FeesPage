@@ -242,6 +242,71 @@
             color: #999;
             text-align: center;
         }
+
+        .rollout-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .rollout-table th {
+            background: #1a1a2e;
+            color: white;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 12px 14px;
+            text-align: left;
+        }
+        .rollout-table td {
+            padding: 11px 14px;
+            border-bottom: 1px solid #e8e8e8;
+            color: #333;
+        }
+        .rollout-table tr:last-child td {
+            border-bottom: none;
+        }
+        .rollout-table tr.current-phase {
+            background: #f0f4ff;
+            font-weight: 600;
+        }
+        .rollout-table tr.current-phase td:first-child {
+            position: relative;
+        }
+        .rollout-table tr.current-phase td:first-child::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #0f3460;
+            border-radius: 0 2px 2px 0;
+        }
+        .phase-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: #e8e8e8;
+            color: #555;
+        }
+        .current-phase .phase-badge {
+            background: #0f3460;
+            color: white;
+        }
+        .rollout-dates {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #666;
+        }
+        .rollout-dates strong {
+            color: #1a1a1a;
+        }
     </style>
 </head>
 <body>
@@ -255,6 +320,71 @@
     </div>
 
     <div class="content">
+
+        <!-- Rollout Plan -->
+        <div class="section">
+            <h2><span class="icon">&#9654;</span> Rollout Plan</h2>
+            <div class="rollout-dates">
+                <span><strong>Start:</strong> 24.03.2026</span>
+                <span><strong>GA:</strong> 16.04.2026</span>
+            </div>
+            <table class="rollout-table">
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Duration</th>
+                        <th>Dates</th>
+                        <th>Exposure</th>
+                        <th>Visits/day</th>
+                        <th>Goal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="phase-badge">Phase 1</span></td>
+                        <td>7 days</td>
+                        <td>24.03 -- 31.03</td>
+                        <td>5% all countries</td>
+                        <td>~75</td>
+                        <td>Catch obvious breakages</td>
+                    </tr>
+                    <tr class="current-phase">
+                        <td><span class="phase-badge">Phase 2</span></td>
+                        <td>7 days</td>
+                        <td>01.04 -- 08.04</td>
+                        <td>15% all countries</td>
+                        <td>~250</td>
+                        <td>Passover -- risk &amp; mitigation</td>
+                    </tr>
+                    <tr>
+                        <td><span class="phase-badge">Phase 3</span></td>
+                        <td>3 days</td>
+                        <td>09.04 -- 11.04</td>
+                        <td>35%</td>
+                        <td>~550</td>
+                        <td>Validate scale &amp; coverage</td>
+                    </tr>
+                    <tr>
+                        <td><span class="phase-badge">Phase 4</span></td>
+                        <td>3 days</td>
+                        <td>12.04 -- 15.04</td>
+                        <td>50%</td>
+                        <td>~750</td>
+                        <td>Validate scale &amp; coverage</td>
+                    </tr>
+                    <tr>
+                        <td><span class="phase-badge">Phase 5</span></td>
+                        <td>Final day</td>
+                        <td>16.04</td>
+                        <td><strong>100% (GA)</strong></td>
+                        <td>~1500</td>
+                        <td>Full release</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <hr class="section-divider">
 
         <div class="bottom-line">
             <strong>The new fees page is live at ~15% exposure and working as expected.</strong>
